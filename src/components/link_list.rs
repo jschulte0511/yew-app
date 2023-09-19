@@ -14,7 +14,7 @@ pub fn link_list(LinkListProps { links }: &LinkListProps) -> Html {
     //info!("Found links: {:?}", links);
     //let links = generate_links();
 
-    links
+    let links = links
         .iter()
         .map(|link| {
             html! {
@@ -26,5 +26,7 @@ pub fn link_list(LinkListProps { links }: &LinkListProps) -> Html {
                 </>
             }
         })
-        .collect()
+        .collect();
+
+    links
 }

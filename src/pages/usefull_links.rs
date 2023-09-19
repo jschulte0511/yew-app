@@ -1,5 +1,6 @@
 use crate::components::link_list::LinkList;
 use crate::models::link::Link;
+use gloo_console::log;
 use gloo_net::http::Request;
 use log::info;
 use yew::prelude::*;
@@ -34,7 +35,13 @@ pub fn link_page(LinkPageProps {}: &LinkPageProps) -> Html {
             move |_| {
                 let links = links.clone();
                 wasm_bindgen_futures::spawn_local(async move {
-                    let fetched_links: Vec<Link> = Request::get("http://localhost:8000/links")
+                    let server = env!("ACTIX_HOST", "Missing server config");
+                    log!("Server: ", server);
+                    let port = env!("ACTIX_PORT", "Missing server config");
+                    log!("Port", port);
+                    let url = server.to_string() + port + "/links";
+
+                    let fetched_links: Vec<Link> = Request::get(&url)
                         .send()
                         .await
                         .unwrap()

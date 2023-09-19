@@ -124,8 +124,10 @@ fn switch(routes: Route) -> Html {
 fn main() {
     wasm_logger::init(wasm_logger::Config::default());
 
-    let object = JsValue::from("world");
-    log!("Hello", object);
+    let server = env!("ACTIX_HOST", "Missing server config");
+    log!("Server: ", server);
+    let port = env!("ACTIX_PORT", "Missing server config");
+    log!("Port", port);
 
     yew::Renderer::<App>::new().render();
 }
