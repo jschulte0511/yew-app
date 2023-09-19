@@ -31,6 +31,9 @@ jobs:
       run: cargo install trunk
 
     - name: Build Yew Rust app
+      env:
+        ACTIX_HOST: ${{ secrets.ACTIX_HOST }}
+        ACTIX_PORT: ${{ secrets.ACTIX_PORT }}
       run: trunk build --release
 
     - name: Configure AWS credentials
