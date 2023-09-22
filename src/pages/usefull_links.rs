@@ -42,6 +42,7 @@ pub fn link_page(LinkPageProps {}: &LinkPageProps) -> Html {
                     let url = server.to_string() + port + "/links";
 
                     let fetched_links: Vec<Link> = Request::get(&url)
+                        .header("Access-Control-Allow-Origin", "*")
                         .send()
                         .await
                         .unwrap()
