@@ -47,7 +47,7 @@ impl Home {
 
                         <div class="content">
                             { r#"
-                            IBM BPM Engineer by day, Rust enthusiast by night. After spending countless hours finding and fixing JavaScript NullPointerExceptions and watching long-running garbage collection threads taking down production Java servers, I personally believe Rust was sent to us developers, system designers, and solution architects as an answer to our prayers.
+                            BPM Engineer by day, Rust enthusiast by night. After spending countless hours finding and fixing JavaScript NullPointerExceptions and watching long-running garbage collection threads taking down production Java servers, I personally believe Rust was sent to us developers, system designers, and solution architects as an answer to our prayers.
                             "#}
                             <br />
                         </div>
@@ -56,7 +56,8 @@ impl Home {
 
                         <div class="content">
                             {r#"
-                            After reading through the Rust documentation, doing tutorials, and completing various certificates, I have decided to build this website using only Rust to get real-world experience. Hopefully, this will enable me to fulfill my dream of becoming a Rust Engineer by day in the not-too-distant future. Please contact me if I have piqued your interest.
+                            After reading through the Rust documentation, doing tutorials, and completing various certificates, I have decided to build this website using only Rust to get real-world experience. Hopefully, this will enable me to fulfill my dream of becoming a Rust Engineer by day in the not-too-distant future. Please contact me if I have piqued your interest at 
+                            myrustjourney@gmail.com.
                             "#}
                         </div>
                     </div>
