@@ -1,8 +1,7 @@
 use crate::components::link_list::LinkList;
 use crate::models::link::Link;
-use gloo_console::log;
+//use gloo_console::log;
 use gloo_net::http::Request;
-use log::info;
 use yew::prelude::*;
 
 pub struct UsefullLinks;
