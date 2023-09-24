@@ -7,9 +7,7 @@ mod models;
 mod pages;
 use pages::{home::Home, page_not_found::PageNotFound, usefull_links::UsefullLinks};
 
-use gloo_console::log;
-
-use wasm_bindgen::JsValue;
+//use wasm_bindgen::JsValue;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
@@ -123,11 +121,6 @@ fn switch(routes: Route) -> Html {
 
 fn main() {
     wasm_logger::init(wasm_logger::Config::default());
-
-    let server = env!("ACTIX_HOST", "Missing server config");
-    log!("Server: ", server);
-    let port = env!("ACTIX_PORT", "Missing server config");
-    log!("Port", port);
 
     yew::Renderer::<App>::new().render();
 }
