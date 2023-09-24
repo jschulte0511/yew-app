@@ -36,10 +36,10 @@ pub fn link_page(LinkPageProps {}: &LinkPageProps) -> Html {
                 let links = links.clone();
                 wasm_bindgen_futures::spawn_local(async move {
                     let server = env!("ACTIX_HOST", "Missing server config");
-                    log!("Server: ", server);
+                    //log!("Server: ", server);
                     let port = env!("ACTIX_PORT", "Missing server config");
-                    log!("Port", port);
-                    let url = server.to_string() + port + "/links";
+                    //log!("Port", port);
+                    let url = server.to_string() + ":" + port + "/links";
 
                     let fetched_links: Vec<Link> = Request::get(&url)
                         .header("Access-Control-Allow-Origin", "*")
@@ -50,7 +50,7 @@ pub fn link_page(LinkPageProps {}: &LinkPageProps) -> Html {
                         .await
                         .unwrap();
 
-                    info!("Found links in call: {:?}", fetched_links);
+                    //log!("Found links in call: {:?}", fetched_links);
                     links.set(fetched_links);
                 });
                 || ()
